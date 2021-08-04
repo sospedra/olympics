@@ -21,7 +21,7 @@ const Why: React.FC<{}> = () => {
         </Link>
       </h3>
 
-      <main className="container mx-auto flex flex-col justify-center max-w-lg">
+      <main className="container mx-auto flex flex-col justify-center max-w-lg px-2">
         <h4 className="font-bold text-lg pt-6 pb-2">Why?</h4>
 
         <p className="pb-4">

@@ -118,7 +118,7 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
           className="flex justify-end py-4 w-full"
           style={{ maxWidth: "475px" }}
         >
-          <p className="text-xs text-gray-700">
+          <p className="text-xs pr-2 text-gray-700">
             Last updated at {new Date(props.updatedAt).toLocaleString()}
           </p>
         </div>
