@@ -1,6 +1,7 @@
 import Head from "next/head";
 import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
+import { Anchor } from "../services/Anchor";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -81,13 +82,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
 
-      <header className="container mx-auto flex justify-center items-center flex-col pt-4">
+      <header className="container flex flex-col items-center justify-center pt-4 mx-auto">
         <h1 className="text-xl font-bold">The Olympics Score</h1>
       </header>
 
       <Component {...pageProps} />
 
-      <footer className="container mx-auto flex flex-col items-center text-sm  text-purple-900 font-mono py-8">
+      <footer className="container flex flex-col items-center py-8 mx-auto font-mono text-sm text-purple-900">
         <p className="pb-2">
           Data collected from{" "}
           <a href="https://olympics.com/tokyo-2020/">olympics.com</a>
@@ -97,10 +98,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <span className="text-xs" aria-label="love">
             💜
           </span>{" "}
-          by{" "}
-          <a className="text-green-700 underline" href="https://sospedra.me">
-            @sospedra
-          </a>
+          by <Anchor href="https://sospedra.me">@sospedra</Anchor>
         </p>
       </footer>
     </>
