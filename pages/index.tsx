@@ -1,10 +1,10 @@
 import Head from "next/head";
+import { Anchor } from "../services/Anchor";
 import { createFlag } from "../services/create-flag";
 import { createName } from "../services/create-name";
 import { createRanking } from "../services/create-ranking";
 import { fetchMedals } from "../services/fetch-medals";
 import { fetchRecords } from "../services/fetch-records";
-import { Subtitle } from "../services/Subtitle";
 
 const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
   props
@@ -15,15 +15,9 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
         <title>The Olympics Score</title>
         <meta
           name="description"
-          content="A more fair way to score the Olympics Games"
+          content="A fair way to score the Olympics Games"
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Subtitle href="/why">
-        Because the normal count isn&apos;t fair enough{" "}
-        <sup className="not-italic">&#9432;</sup>
-      </Subtitle>
 
       <main className="container flex flex-col items-center justify-center mx-auto">
         <table className="border-collapse table-auto">
@@ -107,6 +101,16 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
           </p>
         </div>
       </main>
+
+      <footer className="container flex flex-col items-center py-8 mx-auto font-mono text-sm text-purple-900">
+        <p>
+          Made with{" "}
+          <span className="text-xs" aria-label="love">
+            💜
+          </span>{" "}
+          by <Anchor href="https://sospedra.me">@sospedra</Anchor>
+        </p>
+      </footer>
     </div>
   );
 };

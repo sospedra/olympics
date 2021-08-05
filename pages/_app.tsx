@@ -2,11 +2,13 @@ import Head from "next/head";
 import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
 import { Anchor } from "../services/Anchor";
+import { Menu } from "../services/Menu";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+      <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
@@ -82,25 +84,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#ffffff" />
       </Head>
 
-      <header className="container flex flex-col items-center justify-center pt-4 mx-auto">
-        <h1 className="text-xl font-bold">The Olympics Score</h1>
-      </header>
+      <Menu />
 
       <Component {...pageProps} />
-
-      <footer className="container flex flex-col items-center py-8 mx-auto font-mono text-sm text-purple-900">
-        <p className="pb-2">
-          Data collected from{" "}
-          <a href="https://olympics.com/tokyo-2020/">olympics.com</a>
-        </p>
-        <p>
-          Made with{" "}
-          <span className="text-xs" aria-label="love">
-            💜
-          </span>{" "}
-          by <Anchor href="https://sospedra.me">@sospedra</Anchor>
-        </p>
-      </footer>
     </>
   );
 }

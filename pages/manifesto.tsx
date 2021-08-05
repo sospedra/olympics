@@ -1,31 +1,39 @@
 import Head from "next/head";
 import { Anchor } from "../services/Anchor";
-import { Subtitle } from "../services/Subtitle";
 
-const Why: React.FC<{}> = () => {
+const Manifesto: React.FC<{}> = () => {
   return (
     <div>
       <Head>
-        <title>Why — The Olympics Score</title>
+        <title>Manifesto — The Olympics Score</title>
         <meta
           name="description"
-          content="How the score of The Olympics Score works?"
+          content="How the ranking of The Olympics Score works?"
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Subtitle href='/'>
-        <span aria-label='Gold cup'>🏆</span> See the score
-      </Subtitle>
-
       <main className="container flex flex-col justify-center max-w-lg px-2 mx-auto">
-        <h4 className="pt-6 pb-2 text-lg font-bold">Why?</h4>
+
+      <h4 id='understand' className="pt-6 pb-2 text-lg font-bold">Understand the score</h4>
+        <p className="pb-4">
+          The table displays all the relevant data to understand how teams are
+          performing. From left to right: the Rank with the position change
+          compared to the official ranking. The NOC (
+          <Anchor href="https://en.wikipedia.org/wiki/National_Olympic_Committee">
+            National Olympic Committee
+          </Anchor>
+          ) or the rightful country name. The gold, silver and bronze
+          medals. The World Records and the Olympics Records. At the end, the
+          total computed score.
+        </p>
+        
+        <h4 id='why' className="pt-6 pb-2 text-lg font-bold">Why?</h4>
 
         <p className="pb-4">
           The <Anchor href='https://olympics.com/tokyo-2020/olympic-games/en/results/all-sports/medal-standings.htm'>normal score</Anchor> is not fair enough. It implies that Gold medals are
-          way better than the others. Which instills the idea the winning is the
+          way better than the others. Which instills the idea that winning is the
           one and only valid result. However, that is a far cry from reality.
-          Differences between firsts and seconds is usually measured in
+          Differences between firsts and seconds are usually measured in
           milliseconds, millimeters, tiny gaps in general.
         </p>
         <p className="pb-4">
@@ -60,22 +68,32 @@ const Why: React.FC<{}> = () => {
         </p>
         <p>4 bronze medals are better than 1 gold.</p>
         <p className="pb-4">1 WR is better than 2 gold medals.</p>
-
-        <h4 className="pt-6 pb-2 text-lg font-bold">Table</h4>
-        <p className="pb-4">
-          The table displays all the relevant data to understand how teams are
-          performing. From left to right: the Rank with the position change
-          compared to the official ranking. The NOC (
-          <Anchor href="https://en.wikipedia.org/wiki/National_Olympic_Committee">
-            National Olympic Committee
-          </Anchor>
-          ) or the rightful country name. The gold, silver and bronze
-          medals. The World Records and the Olympics Records. At the end, the
-          total computed score.
-        </p>
       </main>
+
+      <footer className="container flex flex-col items-center py-8 mx-auto font-mono text-sm text-purple-900">
+        <p className="">
+          Data collected from{" "}
+          <Anchor href="https://olympics.com/tokyo-2020/">olympics.com</Anchor>
+        </p>
+        <p>
+         Code available on <Anchor href='https://github.com/sospedra/olympics'>Github</Anchor>
+        </p>
+        <p>
+          Made with{" "}
+          <span className="text-xs" aria-label="love">
+            💜
+          </span>{" "}
+          by <Anchor href="https://sospedra.me">@sospedra</Anchor>
+        </p>
+      </footer>
+
+      <style jsx global>{`
+          html {
+            scroll-behavior: smooth;
+          }
+        `}</style>
     </div>
   );
 };
 
-export default Why;
+export default Manifesto;
