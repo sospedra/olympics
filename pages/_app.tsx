@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-      <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"

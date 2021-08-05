@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 export default class TOSDocument extends Document {
   render() {
     return (
-      <Html lang='en'>
+      <Html lang="en">
         <Head>
           <script
             data-goatcounter="https://olympics.goatcounter.com/count"

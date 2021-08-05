@@ -26,13 +26,13 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
               <th className="pt-2 pb-5 pr-2 text-left">Rank</th>
               <th className="pt-2 pb-5 pr-2 text-left">Country/NOC</th>
               <th className="pt-2 pb-5 pr-2 text-center">
-                <span  aria-label="Gold medal">🥇</span>
+                <span aria-label="Gold medal">🥇</span>
               </th>
               <th className="pt-2 pb-5 pr-2">
-                <span  aria-label="Silver medal">🥈</span>
+                <span aria-label="Silver medal">🥈</span>
               </th>
               <th className="pt-2 pb-5 pr-2">
-                <span  aria-label="Bronze medal">🥉</span>
+                <span aria-label="Bronze medal">🥉</span>
               </th>
               <th className="pt-2 pb-5 pr-2 text-left">WR</th>
               <th className="pt-2 pb-5 pr-2 text-left">OR</th>
