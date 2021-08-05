@@ -8,5 +8,5 @@ export const Anchor: React.FC<{ href: string }> = (props) => {
     >
       {props.children}
     </a>
-  );
-};
+  )
+}

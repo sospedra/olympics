@@ -1,8 +1,8 @@
-import Head from "next/head";
-import "tailwindcss/tailwind.css";
-import type { AppProps } from "next/app";
-import { Anchor } from "../services/Anchor";
-import { Menu } from "../services/Menu";
+import Head from "next/head"
+import "tailwindcss/tailwind.css"
+import type { AppProps } from "next/app"
+import { Anchor } from "../services/Anchor"
+import { Menu } from "../services/Menu"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -88,6 +88,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Component {...pageProps} />
     </>
-  );
+  )
 }
-export default MyApp;
+export default MyApp

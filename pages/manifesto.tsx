@@ -1,5 +1,5 @@
-import Head from "next/head";
-import { Anchor } from "../services/Anchor";
+import Head from "next/head"
+import { Anchor } from "../services/Anchor"
 
 const Manifesto: React.FC<{}> = () => {
   return (
@@ -102,7 +102,7 @@ const Manifesto: React.FC<{}> = () => {
         }
       `}</style>
     </div>
-  );
-};
+  )
+}
 
-export default Manifesto;
+export default Manifesto

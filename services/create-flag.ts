@@ -1,20 +1,20 @@
-import { flag } from "country-emoji";
+import { flag } from "country-emoji"
 
 export const createFlag = (name: string) => {
   switch (name) {
     case "ROC":
-      return "🇷🇺";
+      return "🇷🇺"
     case "Republic of Korea":
-      return "🇰🇷";
+      return "🇰🇷"
     case "Great Britain":
-      return "🇬🇧";
+      return "🇬🇧"
     case "Chinese Taipei":
-      return "🇹🇼";
+      return "🇹🇼"
     case "Hong Kong, China":
-      return "🇭🇰";
+      return "🇭🇰"
     case "Côte d'Ivoire":
-      return "🇨🇮";
+      return "🇨🇮"
     default:
-      return flag(name);
+      return flag(name)
   }
-};
+}

@@ -1,10 +1,10 @@
-import Head from "next/head";
-import { Anchor } from "../services/Anchor";
-import { createFlag } from "../services/create-flag";
-import { createName } from "../services/create-name";
-import { createRanking } from "../services/create-ranking";
-import { fetchMedals } from "../services/fetch-medals";
-import { fetchRecords } from "../services/fetch-records";
+import Head from "next/head"
+import { Anchor } from "../services/Anchor"
+import { createFlag } from "../services/create-flag"
+import { createName } from "../services/create-name"
+import { createRanking } from "../services/create-ranking"
+import { fetchMedals } from "../services/fetch-medals"
+import { fetchRecords } from "../services/fetch-records"
 
 const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
   props
@@ -41,13 +41,13 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
           </thead>
           <tbody>
             {props.ranking.map((ranking, index) => {
-              const diff = ranking.medal.classicRank - (index + 1);
-              const trend = diff === 0 ? "eq" : diff > 0 ? "gt" : "lt";
+              const diff = ranking.medal.classicRank - (index + 1)
+              const trend = diff === 0 ? "eq" : diff > 0 ? "gt" : "lt"
               const trendColor = {
                 gt: "text-green-500",
                 lt: "text-red-500",
                 eq: "",
-              }[trend];
+              }[trend]
 
               return (
                 <tr
@@ -87,7 +87,7 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
                     <b>{ranking.score}</b>
                   </td>
                 </tr>
-              );
+              )
             })}
           </tbody>
         </table>
@@ -112,15 +112,15 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
         </p>
       </footer>
     </div>
-  );
-};
+  )
+}
 
 export async function getStaticProps() {
-  const medals = await fetchMedals();
-  const records = await fetchRecords();
-  const ranking = createRanking(medals, records);
-  const now = new Date().getTime();
-  const revalidate = now <= 1628380800000 ? 600 : false;
+  const medals = await fetchMedals()
+  const records = await fetchRecords()
+  const ranking = createRanking(medals, records)
+  const now = new Date().getTime()
+  const revalidate = now <= 1628380800000 ? 600 : false
 
   return {
     props: {
@@ -128,7 +128,7 @@ export async function getStaticProps() {
       updatedAt: now,
     },
     revalidate,
-  };
+  }
 }
 
-export default Home;
+export default Home

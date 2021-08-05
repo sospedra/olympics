@@ -1,14 +1,14 @@
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { useRouter } from "next/router"
+import Link from "next/link"
 
 const MENU = [
   { name: "Ranking", href: "/" },
   { name: "Understand the score ⓘ", href: "/manifesto#understand" },
   { name: "Manifesto", href: "/manifesto#why" },
-];
+]
 
 export const Menu: React.FC<{}> = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <header className="container flex flex-col items-center justify-center pt-4 mx-auto">
@@ -17,7 +17,7 @@ export const Menu: React.FC<{}> = () => {
       <nav>
         <ul className="flex flex-row pb-4 text-sm">
           {MENU.map((item) => {
-            const isActive = router.asPath === item.href;
+            const isActive = router.asPath === item.href
 
             return (
               <li key={item.name} className="px-2">
@@ -31,10 +31,10 @@ export const Menu: React.FC<{}> = () => {
                   </a>
                 </Link>
               </li>
-            );
+            )
           })}
         </ul>
       </nav>
     </header>
-  );
-};
+  )
+}
