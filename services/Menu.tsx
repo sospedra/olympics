@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const MENU = [
   { name: "Ranking", href: "/" },
-  { name: "Understand the score ⓘ", href: "/manifesto#understand" },
+  { name: "Understand the score", href: "/manifesto#understand", info: true },
   { name: "Manifesto", href: "/manifesto#why" },
 ]
 
@@ -28,6 +28,7 @@ export const Menu: React.FC<{}> = () => {
                     }`}
                   >
                     {item.name}
+                    {item.info && <sup>ⓘ</sup>}
                   </a>
                 </Link>
               </li>

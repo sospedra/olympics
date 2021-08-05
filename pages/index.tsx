@@ -21,7 +21,7 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
 
       <main className="container flex flex-col items-center justify-center mx-auto">
         <table className="border-collapse table-auto">
-          <thead>
+          <thead className="text-sm xs:text-base">
             <tr className="sticky top-0 bg-gradient-to-b from-white via-white">
               <th className="pt-2 pb-5 pr-2 text-left">Rank</th>
               <th className="pt-2 pb-5 pr-2 text-left">Country/NOC</th>
@@ -39,7 +39,7 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
               <th className="pt-2 pb-5 pr-2 text-left">Score</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-sm xs:text-base">
             {props.ranking.map((ranking, index) => {
               const diff = ranking.medal.classicRank - (index + 1)
               const trend = diff === 0 ? "eq" : diff > 0 ? "gt" : "lt"
@@ -56,12 +56,15 @@ const Home: React.FC<Await<ReturnType<typeof getStaticProps>>["props"]> = (
                     index === 2 ? "border-b-2" : ""
                   }`}
                 >
-                  <td className="pr-2">
-                    <span>{index + 1}</span>{" "}
-                    <span className={`text-xs ${trendColor}`}>
-                      {trend === "gt" && "▲"}
-                      {trend === "lt" && "▼"}
-                      {diff !== 0 && Math.abs(diff)}
+                  <td className="pr-2 font-mono">
+                    <span className="block whitespace-nowrap">
+                      <span className="pr-1">{index + 1}</span>
+                      {""}
+                      <span className={`text-xs ${trendColor}`}>
+                        {trend === "gt" && "▲"}
+                        {trend === "lt" && "▼"}
+                        {diff !== 0 && Math.abs(diff)}
+                      </span>
                     </span>
                   </td>
                   <td className="py-1 pr-2 text-gray-900">
